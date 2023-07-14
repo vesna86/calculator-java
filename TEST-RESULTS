@@ -1,0 +1,42 @@
+Sistemski test - black box test
+jedinični test - test kojim se proveravaju najmanje funkcionalnosti
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class test_Calculator {
+
+    /**
+     * 
+     */
+    public void testAddition() {
+        String expression = "2+2";
+        String expected = "4.0";
+        String result = Calculator.Run(expression);
+       
+        assertEquals (expected, result);
+    }
+
+    private void assertEquals(String expected, String result) {
+    }
+}
+
+Prilikom sabiranja dva boja 2+2 dobijamo očekivani rezultat 4.
+Prilikom oduzimanja dva broja 2-2 dobijamo očekivani rezultat 0.
+Prilikom množenja dva borja 2*2  dobijamo očekivani rezultat 4.
+Prilikom deljenja dva broja 2/2 dobijamo očekivani rezultat 1.
+Prilikom korišćenja zagrada 2+(1+1) dobijamo očekivani rezultat 4.
+Prilikom računanja sa više računskih operacija 2+2*2 dobijamo očekivani rezultat 6.
+Prilikom računanja sa negativnim brojevima -2-2 dobijamo očekivani rezultat -4.
+Prilikom računanja decimalnih brojeva 2.2+2.2 dobijamo očekivani rezultat 4.4.
+
+Do greške dolazi kada: 
+se deli sa nulom 2/0
+umesto tačke kod decimalnih brojeva koristimo zarez 2,2+2,2
+koristimo neki karakter 2+A ili 2+&
+nepravilno unesemo 2++2 ili 2+
+računamo kvadrat nekog broja 2^2 
+računamo procente 2*2%
+
+Program Calculator funkcionise sasvim u redu sa jednostavnim, osnovnim računskim operacijama. 
+Prednost je prioritet računskih operacija a mana nemogućnost računanja procenata, korena nekog broja, kvadrata i slično.
